@@ -3,7 +3,7 @@ const assert = require('assert');
 
 // Connection URL
 var mongoUri = process.env.MONGOLAB_URI;
-var url = `mongodb://${mongoUri}:17165/surl`;
+var url = `mongodb://${mongoUri}/surl`;
 
 module.exports = {
   insert: (data) => new Promise((resolve, reject) => {
