@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.get('/shorten', (req, res) => {
   const id = utils.generateId();
   const baseUrl = req.query.url || 'http://www.google.com';
-  const re = /^http:\/\/www.[a-zA-Z]+.[a-zA-Z]+/i;
+  const re = /^(ftp|http|https):\/\/[^ "]+$/;
   if(!re.test(baseUrl)) {
     res.send({ error: 'Your url is not valid' });
   }
