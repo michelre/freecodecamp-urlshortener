@@ -2,7 +2,8 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 // Connection URL
-var url = 'mongodb://localhost:27017/surl';
+var mongoUri = process.env.MONGOLAB_URI;
+var url = `mongodb://${mongoUri}:17165/surl`;
 
 module.exports = {
   insert: (data) => new Promise((resolve, reject) => {
